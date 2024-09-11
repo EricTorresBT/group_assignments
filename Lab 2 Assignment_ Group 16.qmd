@@ -6,10 +6,11 @@ format:
 editor: visual
 ---
 
-Group 16: Konstantina Gkopi(s243692),
+Group 16: Konstantina Gkopi(s243692), Eric Torres (s243275), Lucía de Lamadrid (s24), Jorge Santiago (s24), Elena Iriondo (s24)
 
 #### **T7: Like T6, but with densitograms** GROUP ASSIGNMENT
 
+We first have to load the .RData file in which the microarray tibble is present:
 ```{r}
 load("data/gravier.RData")
 ```
@@ -30,7 +31,7 @@ cancer_data=relocate(cancer_data,c(pt_id,age,age_group,pt_id,event_label))
 ggplot(cancer_data, aes(x=g2E09))+
   geom_density(aes(color = event_label))+
   labs(
-    title= "Densitogram of the gene g2E09 based on prognosis in T1T2 node-negative breast cancer patients",
+    title = "Densitogram of the gene g2E09 based on prognosis in T1T2 node-negative breast cancer patients",
     x = "Expression level of g2E09 (log2 transformed)",
     y = "Density",
     subtitle = "Stratifies on labelling: good = no event, poor = early metastasis",
@@ -38,7 +39,6 @@ ggplot(cancer_data, aes(x=g2E09))+
     color = "Label"
   )+
   theme(legend.position = "bottom", plot.title = element_text(size=11), plot.subtitle = element_text(size=9))
-  
 ```
 
 ```{r}
