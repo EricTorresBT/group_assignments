@@ -27,20 +27,7 @@ cancer_data=rename(cancer_data,event_label=y)
 cancer_data$age_group=cut(cancer_data$age,breaks=seq(10,100,by=10))
 cancer_data=relocate(cancer_data,c(pt_id,age,age_group,pt_id,event_label))
 ```
-
-```{r}
-ggplot(cancer_data, aes(x=g2E09))+
-  geom_density(aes(color = event_label))+
-  labs(
-    title = "Densitogram of the gene g2E09 based on prognosis in T1T2 node-negative breast cancer patients",
-    x = "Expression level of g2E09 (log2 transformed)",
-    y = "Density",
-    subtitle = "Stratifies on labelling: good = no event, poor = early metastasis",
-    caption = "Data from Gravier et al.(2010)",
-    color = "Label"
-  )+
-  theme(legend.position = "bottom", plot.title = element_text(size=11), plot.subtitle = element_text(size=9))
-```
+Now we proceed to generate the figure using the geom_density option in ggplot. In this case, it is indifferent whether we stratify at the mapping or representation level.
 
 ```{r}
 #| fig-width: 10
@@ -50,7 +37,7 @@ ggplot(cancer_data, aes(x=g2E09))+
 ggplot(cancer_data, aes(x=g2E09))+
   geom_density(aes(color = event_label))+
   labs(
-    title= "Densitogram of the gene g2E09 based on prognosis in T1T2 node-negative breast cancer patients",
+    title= "Densitogram of the expression of gene g2E09 based on prognosis in T1T2 node-negative breast cancer patients",
     x = "Expression level of g2E09 (log2 transformed)",
     y = "Density",
     subtitle = "Stratifies on labelling: good = no event, poor = early metastasis",
