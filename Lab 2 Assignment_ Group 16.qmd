@@ -6,7 +6,7 @@ format:
 editor: visual
 ---
 
-Group 16: Konstantina Gkopi(s243692), Eric Torres (s243275), Lucía de Lamadrid (s243311), Jorge Santiago (s24), Elena Iriondo (s24)
+Group 16: Konstantina Gkopi(s243692), Eric Torres (s243275), Lucía de Lamadrid (s243311), Jorge Santiago (s24), Elena Iriondo (s243312)
 
 #### **T7: Like T6, but with densitograms** GROUP ASSIGNMENT
 
