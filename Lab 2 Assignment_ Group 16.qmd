@@ -10,7 +10,8 @@ Group 16: Konstantina Gkopi(s243692), Eric Torres (s243275), Lucía de Lamadrid 
 
 #### **T7: Like T6, but with densitograms** GROUP ASSIGNMENT
 
-We first have to load the .RData file in which the microarray tibble is present:
+We first have to load the .RData file, which contains a tibble with the results of the genomic hybridisation array. We also load the library *tidyverse* and set a seed, so that our results can be reproducible. 
+
 ```{r}
 load("data/gravier.RData")
 ```
