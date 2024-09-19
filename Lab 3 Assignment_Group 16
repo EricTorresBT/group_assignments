@@ -37,3 +37,24 @@ SPE_proteo <- SPE_ENV |>
   filter(Taxa %in% proteobacteria)
 
 ```
+
+3.  Make the plot
+
+```{r}
+#| echo: false
+ggplot(SPE_proteo, aes(x = pH,
+                       y = Temp,
+                       size=OTU_Count,
+                       color=site)) +
+  geom_point(alpha=0.5) +
+  theme_minimal() +
+  labs(title = "Distribution of Proteobacteria by Temperature and pH",
+       x = "pH",
+       y = "Temperature",
+       caption="Data from Torondel et al. (2016)",
+       color="Site") +
+  facet_wrap(~Taxa) +
+  theme(legend.position = "bottom")
+```
+
+As shown in the plots constructed in the tasks 2-4, the Vietnam latrines present lower temperatures than those found in Tanzania. The pH levels are similar, the Vietnam latrines presenting slightly more variability. Regarding the taxonomy, some types of Proteobacteria seem to be influenced by these environmental conditions. Both Gammaproteobacteria and Alphaproteobacteria present a much higher "OTU_Count" (more species are present) under the Vietnamese latrine conditions, whilst Betaproteobacteria are favoured in Tanzania.
