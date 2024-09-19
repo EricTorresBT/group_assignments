@@ -1,0 +1,39 @@
+---
+title: "Lab 3 Assignment: Group 16"
+format:
+  html:
+    embed-resources: true
+editor: visual
+self-contained: true
+---
+
+Group 16: Konstantina Gkopi (s243692), Eric Torres (s243275), Lucía de Lamadrid (s243311), Jorge Santiago (s243310), Elena Iriondo (s243312).
+
+#### Task 9 - GROUP ASSIGNMENT
+
+*For this assignment you and your group are to apply what you have learned in the two data visualisation labs. The task is to be creative and make a really nice plot using the `SPE_ENV` data set*
+
+The data set in question corresponds to a pit latrine study carried out by Torondel *et al.* (<https://doi.org/10.1111/1751-7915.12334>), in which nutrients and bacterial operational taxonomic units were analysed from samples obtained from Tanzania and Vietnam. Our group sought to explore how the pH and temperature affected the growth of the different type of Proteobacteria.
+
+1.  Load libraries
+
+```{r}
+#| message: false
+library(tidyverse)
+library(ggridges)
+library(tidymodels)
+library(scales)
+library(patchwork)
+```
+
+2.  Load data
+
+```{r}
+#| echo: false
+SPE_ENV <- read_tsv(file = "data/SPE_ENV.tsv")
+
+proteobacteria=c("Alphaproteobacteria","Betaproteobacteria", "Deltaproteobacteria", "Gammaproteobacteria", "Epsilonproteobacteria")
+SPE_proteo <- SPE_ENV |>
+  filter(Taxa %in% proteobacteria)
+
+```
